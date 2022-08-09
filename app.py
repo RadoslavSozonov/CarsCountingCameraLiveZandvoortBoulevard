@@ -57,7 +57,8 @@ def get_data():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Cars Counting Camera Live Zandvoort Boulevard")
-    parser.add_argument("--port", default=5002, type=int, help="port number")
-    opt = parser.parse_args()
-    app.run(host="0.0.0.0", port=5002)
+    app.run()
+    # parser = argparse.ArgumentParser(description="Cars Counting Camera Live Zandvoort Boulevard")
+    # parser.add_argument("--port", default=5002, type=int, help="port number")
+    # opt = parser.parse_args()
+    # app.run(host="0.0.0.0", port=5002)
