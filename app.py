@@ -25,9 +25,9 @@ def start():  # put application's code here
         print(im)
         im.save("img1.png")
         capture(
-            "https://www.youtube.com/watch?v=Ej3N93Bdp-Q",
+            "https://www.youtube.com/watch?v=q0-DDh1zdY4",
             [
-                [[250, 340], [825, 1075]]
+                [[795, 1000], [0, 400]]
             ]
         )
 
@@ -57,7 +57,7 @@ def get_data():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5002)
     # parser = argparse.ArgumentParser(description="Cars Counting Camera Live Zandvoort Boulevard")
     # parser.add_argument("--port", default=5002, type=int, help="port number")
     # opt = parser.parse_args()

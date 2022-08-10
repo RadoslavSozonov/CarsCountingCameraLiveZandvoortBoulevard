@@ -5,8 +5,8 @@ import requests
 import datetime
 photo_to_compare = []
 detected_photos_info = []
-DETECTION_URL = "http://localhost:5010/get_count"
-# DETECTION_URL = "http://localhost:5002/cars-counting"
+# DETECTION_URL = "http://localhost:5010/get_count"
+DETECTION_URL = "http://localhost:5002/cars-counting"
 IMAGE = "image.jpg"
 
 def get_info():
@@ -93,8 +93,8 @@ def capture(url_video, photos_detail):
     stream.stop()
 
 def write_to_directory(result, counter, photo_to_compare, cropped_image, prev_res, frame):
-    threshold = 0.27
-    # print(result)
+    threshold = 0.21
+    print(result)
     if result >= threshold:
         if result > prev_res[0]:
             if prev_res[0] < threshold:
@@ -107,7 +107,7 @@ def write_to_directory(result, counter, photo_to_compare, cropped_image, prev_re
             response = requests.post(DETECTION_URL, files={"image": image_data}).json()
             # print(response)
             detected_photos_info.append({
-                "people": response,
+                "people": str(response),
                 "counter": counter,
                 "time": str(datetime.datetime.now())
             })
